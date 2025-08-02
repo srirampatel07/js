@@ -61,6 +61,16 @@ const users = [
 
 
 
+const course = {
+    coursename: "js",
+    price: "999",
+    courseInstructor: "chanti"
+}
+
+const {courseInstructor: instructor} = course    //  we can use :  as short names/ alias
+
+console.log(instructor);
+
 
 
 
