@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+      const li = document.createElement("li")
+      li.innerText = `${langName}`
+      document.querySelector(".language").appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    //    try to use this type to create and add content in an element
+
+    function addOptiLanguage(langName) {
+       const li = document.createElement("li")
+       li.appendChild(document.createTextNode(langName))
+       document.querySelector(".language").appendChild(li)
+    }
+    addOptiLanguage("html")
+
+
+    //   to EDIT  elements
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+   //  secondLang.innerText = "java"   //   this is simple way (method 1)   use this method, this is easy
+   const newli = document.createElement("li")    //   these below 3 lines (method 2)
+   newli.textContent = "java"
+   secondLang.replaceWith(newli)
+
+
+
+   //  EDIT 
+
+
+   const firstLang = document.querySelector("li:first-child")
+// firstLang.innerText = "typeScript"   //  method 1
+   firstLang.outerHTML = "<li>TYPESCRIPT</li>"    //   (method 3)
+
+
+
+   //   to REMOVE 
+
+
+   const lastLang = document.querySelector("li:last-child")
+   console.log(lastLang);
+   lastLang.remove()
+   
+
+
+</script>
+</html>
